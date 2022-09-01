@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button slot="start"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Customer Dashboard
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="ion-padding">
+  <div *ngIf="!customerData.avatar_url" class="spinnerSection" style="text-align: center;">
+      <ion-spinner name="lines"></ion-spinner>
+  </div>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+        <ion-card *ngIf="customerData.avatar_url">
+            <img src="{{ customerData.avatar_url }}" />
+            <ion-card-header>
+              <ion-card-subtitle>Username: {{ customerData.username}}</ion-card-subtitle>
+              <ion-card-subtitle>Email: {{ customerData.email}}</ion-card-subtitle>
+              <ion-card-subtitle>User Role: {{ customerData.role}}</ion-card-subtitle>
+              <ion-card-title>{{ customerData.first_name}} {{ customerData.last_name}}</ion-card-title>
+            </ion-card-header>
+          </ion-card>
+    </ion-col>
+  </ion-row>
+  <ion-row *ngIf="customerData.billing">
+      <ion-col>
+          <ion-card>
+            <ion-card-header>
+                <ion-card-title>Billing Details</ion-card-title>
+                <ion-text>
+                  Name: {{ customerData.billing.first_name}} {{ customerData.billing.last_name}}
+                </ion-text><br>
+                <ion-text>
+                  Address: {{ customerData.billing.address_1}}
+                </ion-text><br>
+                <ion-text *ngIf="customerData.billing.address_2">
+                  Address 2: {{ customerData.billing.address_2}}
+                </ion-text> <br *ngIf="customerData.billing.address_2">
+                <ion-text>
+                  City: {{ customerData.billing.city}}
+                </ion-text><br>
+                <ion-text>
+                  State: {{ customerData.billing.state}}
+                </ion-text><br>
+                <ion-text>
+                  Country: {{ customerData.billing.country}}
+                </ion-text><br>
+                <ion-text>
+                  Post Code: {{ customerData.billing.postcode}}
+                </ion-text><br>
+                <ion-text>
+                  Mobile: {{ customerData.billing.phone}}
+                </ion-text>
+            </ion-card-header>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="customerData.shipping">
+      <ion-col>
+          <ion-card>
+            <ion-card-header>
+                <ion-card-title>Shipping Details</ion-card-title>
+                <ion-text>
+                  Name: {{ customerData.shipping.first_name}} {{ customerData.shipping.last_name}}
+                </ion-text><br>
+                <ion-text>
+                  Address: {{ customerData.shipping.address_1}}
+                </ion-text><br>
+                <ion-text *ngIf="customerData.shipping.address_2">
+                  Address 2: {{ customerData.shipping.address_2}}
+                </ion-text> <br *ngIf="customerData.shipping.address_2">
+                <ion-text>
+                  City: {{ customerData.shipping.city}}
+                </ion-text><br>
+                <ion-text>
+                  State: {{ customerData.shipping.state}}
+                </ion-text><br>
+                <ion-text>
+                  Country: {{ customerData.shipping.country}}
+                </ion-text><br>
+                <ion-text>
+                  Post Code: {{ customerData.shipping.postcode}}
+                </ion-text>
+            </ion-card-header>
+            </ion-card>
+      </ion-col>
+    </ion-row>
+</ion-grid>
+</div>
+</ion-content>

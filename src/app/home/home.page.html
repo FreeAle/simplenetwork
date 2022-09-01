@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button *ngIf="isLogoutShow" color="primary" (click)="logOut()">Log Out</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="ion-padding">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-card [routerLink]="['/products']">
+              <img src="https://hasan.online/woocomapp/wp-content/uploads/2019/10/logo-1.jpg" />
+              <ion-card-header>
+                <ion-card-title>Browse All Products</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Here you can browse all the products of our store.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card [routerLink]="['/categories']">
+              <img src="https://hasan.online/woocomapp/wp-content/uploads/2019/10/product-list-icon.png" />
+              <ion-card-header>
+                <ion-card-title>Browse All Catgories</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Here you can browse all the products by categories.
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col>
+            <ion-card [routerLink]="['/tags']">
+              <img src="https://hasan.online/woocomapp/wp-content/uploads/2019/10/tag-icon.png" />
+              <ion-card-header>
+                <ion-card-title>Browse All Tags</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                Here you can browse all the products by tags
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Orders
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+      <ion-list>
+          <ion-item *ngFor="let order of orders">
+              <ion-icon name="mail-open" slot="start"></ion-icon>
+              <ion-label>
+                  <p>Order ID: #{{order.id}}</p>
+                  <p>Price: ${{ order.total }}USD </p>
+              </ion-label>
+          </ion-item>
+        </ion-list>
+  </div>
+
+</ion-content>

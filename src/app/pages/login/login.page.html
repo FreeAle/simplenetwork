@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        Login
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  <div class="ion-padding">
+    <form #loginForm="ngForm">
+    <ion-grid>
+      <ion-row>
+          <ion-col size="12">
+            <p>Enter Email</p>
+          </ion-col>
+          <ion-col size="12">
+              <ion-input 
+              class="input"
+              name="email" 
+              ngModel 
+              #uemail="ngModel" 
+              [(ngModel)] = email 
+              required 
+              placeholder="Enter email" 
+              ></ion-input>
+          </ion-col>
+          <ion-col size="12" *ngIf="uemail.touched && !uemail.valid">
+              <ion-text color="danger">
+                <p>Please enter email</p>
+              </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <p>Enter Password</p>
+          </ion-col>
+          <ion-col size="12">
+              <ion-input 
+              class="input"
+              name="password" 
+              ngModel 
+              #upass="ngModel" 
+              [(ngModel)] = password 
+              required 
+              placeholder="Enter password" 
+              type="password"
+              ></ion-input>
+          </ion-col>
+          <ion-col size="12" *ngIf="upass.touched && !upass.valid">
+              <ion-text color="danger">
+                <p>Please enter password</p>
+              </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button expand="block" color="primary" [disabled]="!loginForm.valid" (click)="signIn()"> Sign In </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col size="12">
+              <ion-text>Don't have an account yet? Register here</ion-text>
+              <ion-button expand="block" color="primary" [routerLink]="['/register']"> Sign Up </ion-button>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+  </form>
+  </div>
+  </ion-content>
+  
