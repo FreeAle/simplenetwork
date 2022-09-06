@@ -11,7 +11,7 @@ export class AuthService {
   isUserLoggedIn: boolean = false;
   customerData:any;
   apiURL: string = '';
-  siteURL: string = 'https://demo.hasan.online/webstore';
+  siteURL: string = 'https://diamonddotz.it';
   woocomPart: string = '/wp-json/wc/v3/';
   jwtPart: string = '/wp-json/jwt-auth/v1/token';
   consumerKey: string = 'ck_56a47e58bf9045f99e0df42dd321c09049752781';
